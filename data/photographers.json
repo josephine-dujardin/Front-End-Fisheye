@@ -2,7 +2,7 @@
 	"photographers": [
 		{
 			"name": "Mimi Keel",
-			"id": 243,
+			"id": "mimi-keel",
 			"place": "London, UK",
 			"tagline": "Voir le beau dans le quotidien",
 			"price": "400€/jour",
@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "Ellie-Rose Wilkens",
-			"id": 930,
+			"id": "ellie-rose-wilkens",
 			"place": "Paris, France",
 			"tagline": "Capturer des compositions complexes",
 			"price": "250€/jour",
@@ -18,7 +18,7 @@
 		},
 		{
 			"name": "Tracy Galindo",
-			"id": 82,
+			"id": "tracy-galindo",
 			"place": "Montreal, Canada",
 			"tagline": "Photographe freelance",
 			"price": "500€/jour",
@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "Nabeel Bradford",
-			"id": 527,
+			"id": "nabeel-bradford",
 			"place": "Mexico City, Mexico",
 			"tagline": "Toujours aller de l'avant",
 			"price": "350€/jour",
@@ -34,7 +34,7 @@
 		},
 		{
 			"name": "Rhode Dubois",
-			"id": 925,
+			"id": "rhode-dubois",
 			"place": "Barcelona, Spain",
 			"tagline": "Je crée des souvenirs",
 			"price": "275€/jour",
@@ -42,7 +42,7 @@
 		},
 		{
 			"name": "Marcel Nikolic",
-			"id": 195,
+			"id": "marcel-nikolic",
 			"place": "Berlin, Germany",
 			"tagline": "Toujours à la recherche de LA photo",
 			"price": "300€/jour",
@@ -52,7 +52,7 @@
 	"media": [
 		{
 			"id": 342550,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Fashion Yellow Beach",
 			"image": "Fashion_Yellow_Beach.jpg",
 			"likes": 62,
@@ -61,7 +61,7 @@
 		},
 		{
 			"id": 8520927,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Fashion Urban Jungle",
 			"image": "Fashion_Urban_Jungle.jpg",
 			"likes": 11,
@@ -70,7 +70,7 @@
 		},
 		{
 			"id": 9025895,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Fashion Pattern on a Pattern",
 			"image": "Fashion_Pattern_on_Pattern.jpg",
 			"likes": 72,
@@ -79,7 +79,7 @@
 		},
 		{
 			"id": 9275938,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Wedding Gazebo",
 			"image": "Event_WeddingGazebo.jpg",
 			"likes": 69,
@@ -88,7 +88,7 @@
 		},
 		{
 			"id": 2053494,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Sparkles",
 			"image": "Event_Sparklers.jpg",
 			"likes": 2,
@@ -97,7 +97,7 @@
 		},
 		{
 			"id": 7324238,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "18th Anniversary",
 			"image": "Event_18thAnniversary.jpg",
 			"likes": 33,
@@ -106,7 +106,7 @@
 		},
 		{
 			"id": 8328953,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Wooden sculpture of a horse",
 			"video": "Art_Wooden_Horse_Sculpture.mp4",
 			"likes": 24,
@@ -115,7 +115,7 @@
 		  },
 		{
 			"id": 7502053,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Triangle Man",
 			"image": "Art_Triangle_Man.jpg",
 			"likes": 88,
@@ -124,7 +124,7 @@
 		},
 		{
 			"id": 8523492,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Purple Tunnel",
 			"image": "Art_Purple_light.jpg",
 			"likes": 24,
@@ -133,7 +133,7 @@
 		},
 		{
 			"id": 75902334,
-			"photographerId": 82,
+			"photographerId": "tracy-galindo",
 			"title": "Art Mine",
 			"image": "Art_Mine.jpg",
 			"likes": 75,
@@ -143,7 +143,7 @@
 
 		{
 			"id": 73852953,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "8 Rows",
 			"image": "Sport_2000_with_8.jpg",
 			"likes": 52,
@@ -152,7 +152,7 @@
 		},
 		{
 			"id": 92758372,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Fashion Wings",
 			"image": "Fashion_Wings.jpg",
 			"likes": 58,
@@ -161,7 +161,7 @@
 		},
 		{
 			"id": 32958383,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Melody Red on Stripes",
 			"image": "Fashion_Melody_Red_on_Stripes.jpg",
 			"likes": 11,
@@ -170,7 +170,7 @@
 		},
 		{
 			"id": 928587383,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Venture Conference",
 			"image": "Event_VentureConference.jpg",
 			"likes": 2,
@@ -179,7 +179,7 @@
 		},
 		{
 			"id": 725639493,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Product Pitch",
 			"image": "Event_ProductPitch.jpg",
 			"likes": 3,
@@ -188,7 +188,7 @@
 		},
 		{
 			"id": 23394384,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Musical Festival Keyboard",
 			"image": "Event_KeyboardCheck.jpg",
 			"likes": 52,
@@ -197,7 +197,7 @@
 		},
 		{
 			"id": 87367293,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Musical Festival Singer",
 			"image": "Event_Emcee.jpg",
 			"likes": 23,
@@ -206,7 +206,7 @@
 		},
 		{
 			"id": 593834784,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Animal Majesty",
 			"image": "Animals_Majesty.jpg",
 			"likes": 52,
@@ -215,7 +215,7 @@
 		},
 		{
 			"id": 83958935,
-			"photographerId": 925,
+			"photographerId": "rhode-dubois",
 			"title": "Cute puppy on sunset",
 			"video": "Animals_Puppiness.mp4",
 			"likes": 52,
@@ -224,7 +224,7 @@
 		},
 		{
 			"id": 394583434,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Rocky mountains from the air",
 			"video": "Travel_Rock_Mountains.mp4",
 			"likes": 23,
@@ -233,7 +233,7 @@
 		},
 		{
 			"id": 343423425,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Outdoor Baths",
 			"image": "Travel_Outdoor_Baths.jpg",
 			"likes": 101,
@@ -242,7 +242,7 @@
 		},
 		{
 			"id": 73434243,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Road into the Hill",
 			"image": "Travel_Road_into_Hill.jpg",
 			"likes": 99,
@@ -251,7 +251,7 @@
 		},
 		{
 			"id": 23425523,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Bridge into the Forest",
 			"image": "Travel_Bridge_into_Forest.jpg",
 			"likes": 34,
@@ -260,7 +260,7 @@
 		},
 		{
 			"id": 23134513,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Boat Wonderer",
 			"image": "Travel_Boat_Wanderer.jpg",
 			"likes": 23,
@@ -269,7 +269,7 @@
 		},
 		{
 			"id": 92352352,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Portrait Sunkiss",
 			"image": "Portrait_Sunkissed.jpg",
 			"likes": 66,
@@ -278,7 +278,7 @@
 		},
 		{
 			"id": 34513453,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Shaw Potrait",
 			"image": "Portrait_Shaw.jpg",
 			"likes": 52,
@@ -287,7 +287,7 @@
 		},
 		{
 			"id": 23523533,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Alexandra",
 			"image": "Portrait_Alexandra.jpg",
 			"likes": 95,
@@ -296,7 +296,7 @@
 		},
 		{
 			"id": 525834234,
-			"photographerId": 527,
+			"photographerId": "nabeel-bradford",
 			"title": "Afternoon Break",
 			"image": "Portrait_AfternoonBreak.jpg",
 			"likes": 25,
@@ -306,7 +306,7 @@
 
 		{
 			"id": 623534343,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Lonesome",
 			"image": "Travel_Lonesome.jpg",
 			"likes": 88,
@@ -315,7 +315,7 @@
 		},
 		{
 			"id": 625025343,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Hillside Color",
 			"image": "Travel_HillsideColor.jpg",
 			"likes": 85,
@@ -324,7 +324,7 @@
 		},
 		{
 			"id": 2525345343,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Wednesday Potrait",
 			"image": "Portrait_Wednesday.jpg",
 			"likes": 34,
@@ -333,7 +333,7 @@
 		},
 		{
 			"id": 2523434634,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Nora Portrait",
 			"image": "Portrait_Nora.jpg",
 			"likes": 63,
@@ -342,7 +342,7 @@
 		},
 		{
 			"id": 398847109,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Raw Black Portrait",
 			"image": "Portrait_Background.jpg",
 			"likes": 55,
@@ -351,7 +351,7 @@
 		},
 		{
 			"id": 2534342,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Seaside Wedding",
 			"image": "Event_SeasideWedding.jpg",
 			"likes": 25,
@@ -360,7 +360,7 @@
 		},
 		{
 			"id": 65235234,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Boulder Wedding",
 			"image": "Event_PintoWedding.jpg",
 			"likes": 52,
@@ -369,7 +369,7 @@
 		},
 		{
 			"id": 23523434,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Benevides Wedding",
 			"image": "Event_BenevidesWedding.jpg",
 			"likes": 77,
@@ -378,7 +378,7 @@
 		},
 		{
 			"id": 5234343,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Wild horses in the mountains",
 			"video": "Animals_Wild_Horses_in_the_mountains.mp4",
 			"likes": 142,
@@ -387,7 +387,7 @@
 		  },
 		{
 			"id": 95234343,
-			"photographerId": 243,
+			"photographerId": "mimi-keel",
 			"title": "Rainbow Bird",
 			"image": "Animals_Rainbow.jpg",
 			"likes": 59,
@@ -397,7 +397,7 @@
 
 		{
 			"id": 52343416,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Japanese Tower, Kyoto",
 			"image": "Travel_Tower.jpg",
 			"likes": 25,
@@ -406,7 +406,7 @@
 		},
 		{
 			"id": 2523434,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Senset on Canals, Venice",
 			"image": "Travel_SunsetonCanals.jpg",
 			"likes": 53,
@@ -415,7 +415,7 @@
 		},
 		{
 			"id": 95293534,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Mountain and Lake",
 			"image": "Travel_OpenMountain.jpg",
 			"likes": 33,
@@ -424,7 +424,7 @@
 		},
 		{
 			"id": 356234343,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "City Bike and Stair, Paris",
 			"image": "Travel_Bike_and_Stair.jpg",
 			"likes": 53,
@@ -433,7 +433,7 @@
 		},
 		{
 			"id": 235234343,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Adventure Door, India",
 			"image": "Travel_Adventure_Door.jpg",
 			"likes": 63,
@@ -442,7 +442,7 @@
 		},
 		{
 			"id": 6234234343,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Contrast, St Petersburg",
 			"image": "Architecture_Contrast.jpg",
 			"likes": 52,
@@ -451,7 +451,7 @@
 		},
 		{
 			"id": 6525666253,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "On a Hill, Tibet",
 			"image": "Architecture_On_a_hill.jpg",
 			"likes": 63,
@@ -460,7 +460,7 @@
 		},
 		{
 			"id": 98252523433,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Leaning Tower, Pisa",
 			"image": "Architecture_Dome.jpg",
 			"likes": 88,
@@ -469,7 +469,7 @@
 		},
 		{
 			"id": 9259398453,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Drone shot of Buenos Aires highways",
 			"video": "Architecture_coverr_circle_empty_highway_in_buenos_aires_587740985637.mp4",
 			"likes": 57,
@@ -478,7 +478,7 @@
 		  },
 		{
 			"id": 3523523534,
-			"photographerId": 195,
+			"photographerId": "marcel-nikolic",
 			"title": "Corner Building and Blue Sky",
 			"image": "Architecture_Corner_Room.jpg",
 			"likes": 54,
@@ -487,7 +487,7 @@
 		},
 		{
 			"id": 952343423,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Tricks in te air",
 			"video": "Sport_Tricks_in_the_air.mp4",
 			"likes": 150,
@@ -496,7 +496,7 @@
 		  },
 		{
 			"id": 235234343,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Climber",
 			"image": "Sport_Next_Hold.jpg",
 			"likes": 101,
@@ -505,7 +505,7 @@
 		},
 		{
 			"id": 235343222,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Surfer",
 			"image": "sport_water_tunnel.jpg",
 			"likes": 103,
@@ -514,7 +514,7 @@
 		},
 		{
 			"id": 7775342343,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Skier",
 			"image": "Sport_Sky_Cross.jpg",
 			"likes": 77,
@@ -523,7 +523,7 @@
 		},
 		{
 			"id": 9253445784,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Race End",
 			"image": "Sport_Race_End.jpg",
 			"likes": 88,
@@ -532,7 +532,7 @@
 		},
 		{
 			"id": 22299394,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Jump!",
 			"image": "Sport_Jump.jpg",
 			"likes": 95,
@@ -541,7 +541,7 @@
 		},
 		{
 			"id": 3452342633,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "White Light",
 			"image": "Architecture_White_Light.jpg",
 			"likes": 52,
@@ -550,7 +550,7 @@
 		},
 		{
 			"id": 939234243,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Water on Modern Building",
 			"image": "Architecture_Water_on_Modern.jpg",
 			"likes": 55,
@@ -559,7 +559,7 @@
 		},
 		{
 			"id": 222959233,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Horseshoe",
 			"image": "Architecture_Horseshoe.jpg",
 			"likes": 85,
@@ -568,7 +568,7 @@
 		},
 		{
 			"id": 965933434,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Cross Bar",
 			"image": "Architecture_Cross_Bar.jpg",
 			"likes": 66,
@@ -577,7 +577,7 @@
 		},
 		{
 			"id": 777723343,
-			"photographerId": 930,
+			"photographerId": "ellie-rose-wilkens",
 			"title": "Connected Curves",
 			"image": "Architecture_Connected_Curves.jpg",
 			"likes": 79,
