@@ -1,11 +1,11 @@
-// let json = require('/Users/Documents/workspace/test.json');
+//Code JavaScript lié à la page index.html
 
+// Récupère les données photographer du fichier Json
 function storeMedias(json) {
   console.log(json["media"]);
 }
 
 async function getPhotographers() {
-  // Penser à remplacer par les données récupérées dans le json
   var photographers = [];
 
   var storePhotographers = () => {};
@@ -15,13 +15,12 @@ async function getPhotographers() {
       photographers = json["photographers"];
     });
 
-  // et bien retourner le tableau photographers seulement une fois
-
   return {
     photographers,
   };
 }
 
+// Affiche le profil du photographe
 async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
 

@@ -2,13 +2,61 @@
     display: none;
 }
 
+.photograph-header article {
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    padding: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.photograph-header article img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.photograph-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 100px;
+}
+
+.photograph-media article {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.photograph-media article img {
+    height: 300px;
+    width: 400px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
 }
 
+.main_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .contact_button {
+    margin-top: 270px;
+    position: absolute;
     font-size: 20px;
     font-weight: bold;
     color: white;
