@@ -1,5 +1,7 @@
 //Code JavaScript lié à la page photographer.html
-
+document.getElementById("logo").onclick = function () {
+  location.href = "http://localhost:8888/Front-End-Fisheye-15/";
+};
 // Récupère les données photographer du fichier Json
 if (window.location.href.indexOf("mimi-keel") > -1) {
   async function getPhotographerData() {
@@ -35,6 +37,25 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
   }
 
   init();
+
+  // Affiche le nom du photographe
+  async function displayPhotographerName(photographers) {
+    const photographerContactName =
+      document.querySelector(".photographer-name");
+    photographers.forEach((photographer) => {
+      const photographerContactModel = photographerContactFactory(photographer);
+      const photographerContactCardDOM =
+        photographerContactModel.getphotographerContactCardDOM();
+      photographerContactName.appendChild(photographerContactCardDOM);
+    });
+  }
+  async function initName() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographerData();
+    displayPhotographerName(photographers);
+  }
+
+  initName();
 
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {
