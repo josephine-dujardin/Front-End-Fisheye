@@ -120,6 +120,25 @@ function photographerPageFactory(data) {
   };
 }
 
+function photographerContactFactory(data) {
+  const { name } = data;
+
+  function getphotographerContactCardDOM() {
+    const h2 = document.createElement("h2");
+    h2.textContent = name;
+
+    h2.className = "contact-name";
+
+    return h2;
+  }
+
+  console.log(data);
+  return {
+    name,
+    getphotographerContactCardDOM,
+  };
+}
+
 function photographerPageFactoryMedia(media) {
   const { title, image, id, photographerId } = media;
 

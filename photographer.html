@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="main_header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+
+  <span id="block-transparent"></span>
+
+  <div id="contact_modal">
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi <span class="photographer-name"></span></h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" />
+      </header>
+      <span class="close"></span>
+      <div id="modal-body" class="modal-body">
+        <iframe name="frame" id="frame" style="display: none;"></iframe>
+
+        <form name="reserve" action="index.html" method="get" target="frame">
+          <div class="formData">
+            <label for="first">Prénom</label><br>
+            <input class="text-control" type="text" id="first" name="first" />
+            <br>
+          </div>
+          <div class="formData">
+            <label for="last">Nom</label><br>
+            <input class="text-control" type="text" id="last" name="last" />
+            <br>
+          </div>
+          <div class="formData">
+            <label for="email">Email</label><br>
+            <input class="text-control" type="email" id="email" name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="adresse email valide" />
+            <br>
+          </div>
+          <div class="formData">
+            <label class="message">Votre message</label>
+            <textarea id="message"></textarea>
+          </div>
+          <button type="submit" class="submit_button" onclick="checkAll();closeModal()">Envoyer</button>
+        </form>
       </div>
-      <div class="photograph-header"></div>
-      <div class="photograph-media"></div>
+    </div>
+  </div>
+
+  <header>
+    <img src="assets/images/logo.png" id="logo" class="logo" />
+  </header>
+
+  <main id="main">
+    <div class="main_header">
+      <button class="contact_button modal-btn" onclick="displayModal()">Contactez-moi</button>
+    </div>
+    <div class="photograph-header"></div>
+    <div class="photograph-media"></div>
   </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
-    <script src="scripts/factories/Photographer.js"></script>
-    <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
-  </body>
+
+  <script src="scripts/utils/contactForm.js"></script>
+  <script src="scripts/factories/Photographer.js"></script>
+  <script src="scripts/pages/index.js"></script>
+  <script src="scripts/pages/photographer.js"></script>
+</body>
+
 </html>
