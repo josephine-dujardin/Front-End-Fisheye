@@ -135,7 +135,7 @@ body {
 }
 
 .modal header h2 {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: normal;
     line-height: 10px;
 }
@@ -172,4 +172,34 @@ form textarea {
     border-radius: 5px;
     height: 100px;
     margin-top: 10px;
+}
+
+#lightbox {
+    display: none;
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 30px;
+}
+
+.lightbox-content {
+    display: flex;
+    align-items: center;
+}
+
+#lightbox img {
+    height: 50vh;
+    padding: 30px;
+}
+
+.left-arrow, .right-arrow {
+    height: 50px !important;
+}
+
+.close-lightbox {
+    height: 20px !important;
+    margin-left: auto;
 }
