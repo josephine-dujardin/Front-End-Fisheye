@@ -57,6 +57,24 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
 
   initName();
 
+  // Affiche les photos dans la lightbox
+  async function displayPhotographerPhotos(medias) {
+    const photographerPhoto = document.querySelector(".lightbox-photo-content");
+    medias.forEach((media) => {
+      const photographerPhotoModel = photographerPhotoFactory(media);
+      const photographerPhotoCardDOM =
+        photographerPhotoModel.getphotographerPhotoCardDOM();
+      photographerPhoto.appendChild(photographerPhotoCardDOM);
+    });
+  }
+  async function initPhoto() {
+    // Récupère les datas des photographes
+    const { medias } = await getPhotographerDataMedia();
+    displayPhotographerPhotos(medias);
+  }
+
+  initPhoto();
+
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {
     var medias = [];
@@ -129,6 +147,25 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
 
   init();
 
+  // Affiche le nom du photographe
+  async function displayPhotographerName(photographers) {
+    const photographerContactName =
+      document.querySelector(".photographer-name");
+    photographers.forEach((photographer) => {
+      const photographerContactModel = photographerContactFactory(photographer);
+      const photographerContactCardDOM =
+        photographerContactModel.getphotographerContactCardDOM();
+      photographerContactName.appendChild(photographerContactCardDOM);
+    });
+  }
+  async function initName() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographerData();
+    displayPhotographerName(photographers);
+  }
+
+  initName();
+
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {
     var medias = [];
@@ -200,6 +237,25 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
 
   init();
 
+  // Affiche le nom du photographe
+  async function displayPhotographerName(photographers) {
+    const photographerContactName =
+      document.querySelector(".photographer-name");
+    photographers.forEach((photographer) => {
+      const photographerContactModel = photographerContactFactory(photographer);
+      const photographerContactCardDOM =
+        photographerContactModel.getphotographerContactCardDOM();
+      photographerContactName.appendChild(photographerContactCardDOM);
+    });
+  }
+  async function initName() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographerData();
+    displayPhotographerName(photographers);
+  }
+
+  initName();
+
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {
     var medias = [];
@@ -270,6 +326,25 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
   }
 
   init();
+
+  // Affiche le nom du photographe
+  async function displayPhotographerName(photographers) {
+    const photographerContactName =
+      document.querySelector(".photographer-name");
+    photographers.forEach((photographer) => {
+      const photographerContactModel = photographerContactFactory(photographer);
+      const photographerContactCardDOM =
+        photographerContactModel.getphotographerContactCardDOM();
+      photographerContactName.appendChild(photographerContactCardDOM);
+    });
+  }
+  async function initName() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographerData();
+    displayPhotographerName(photographers);
+  }
+
+  initName();
 
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {
@@ -343,6 +418,25 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
 
   init();
 
+  // Affiche le nom du photographe
+  async function displayPhotographerName(photographers) {
+    const photographerContactName =
+      document.querySelector(".photographer-name");
+    photographers.forEach((photographer) => {
+      const photographerContactModel = photographerContactFactory(photographer);
+      const photographerContactCardDOM =
+        photographerContactModel.getphotographerContactCardDOM();
+      photographerContactName.appendChild(photographerContactCardDOM);
+    });
+  }
+  async function initName() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographerData();
+    displayPhotographerName(photographers);
+  }
+
+  initName();
+
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {
     var medias = [];
@@ -413,6 +507,25 @@ if (window.location.href.indexOf("mimi-keel") > -1) {
   }
 
   init();
+
+  // Affiche le nom du photographe
+  async function displayPhotographerName(photographers) {
+    const photographerContactName =
+      document.querySelector(".photographer-name");
+    photographers.forEach((photographer) => {
+      const photographerContactModel = photographerContactFactory(photographer);
+      const photographerContactCardDOM =
+        photographerContactModel.getphotographerContactCardDOM();
+      photographerContactName.appendChild(photographerContactCardDOM);
+    });
+  }
+  async function initName() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographerData();
+    displayPhotographerName(photographers);
+  }
+
+  initName();
 
   // Récupère les données médias du fichier Json
   async function getPhotographerDataMedia() {

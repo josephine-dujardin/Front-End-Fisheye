@@ -54,7 +54,6 @@ function photographerFactory(data) {
     false
   );
 
-  console.log(data);
   return {
     place,
     tagline,
@@ -107,7 +106,6 @@ function photographerPageFactory(data) {
     return article;
   }
 
-  console.log(data);
   return {
     place,
     tagline,
@@ -132,10 +130,29 @@ function photographerContactFactory(data) {
     return h2;
   }
 
-  console.log(data);
   return {
     name,
     getphotographerContactCardDOM,
+  };
+}
+
+function photographerPhotoFactory(media) {
+  const { image, photographerId } = media;
+
+  const picture = `assets/photographers/${photographerId}/${image}`;
+
+  function getphotographerPhotoCardDOM() {
+    const img = document.createElement("img");
+    img.setAttribute("src", picture);
+
+    img.className = "lightbox-medias";
+
+    return img;
+  }
+
+  return {
+    picture,
+    getphotographerPhotoCardDOM,
   };
 }
 
@@ -164,7 +181,6 @@ function photographerPageFactoryMedia(media) {
     return article;
   }
 
-  console.log(media);
   return {
     title,
     picture,
