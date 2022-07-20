@@ -67,3 +67,32 @@ h1 {
     line-height: 0px;
     color: #757575;
 }
+
+/**** Responsive tablet ****/
+
+@media screen and (max-width: 1005px) {
+    .photographer_section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/**** Responsive smartphone ****/
+
+@media screen and (max-width: 690px) {
+    .photographer_section {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        margin-top: 35px;
+        margin-left: 0px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    h1 {
+        margin-right: 0px;
+    }
+}

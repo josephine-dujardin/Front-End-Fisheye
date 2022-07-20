@@ -12,10 +12,9 @@
 <body>
 
   <section id="lightbox">
-    <img src="assets/icons/red-Icon.svg" class="close-lightbox" aria-label="Fermer la modal"
-      onclick="closeLightbox()" />
+    <img src="assets/icons/red-Icon.svg" class="close-lightbox" id="close-lb" aria-label="Fermer la modal" />
     <div class="lightbox-content">
-      <img src="assets/icons/red-left-arrow.svg" class="left-arrow" aria-label="Flèche gauche" onclick="leftArrow()" />
+      <img src="assets/icons/red-left-arrow.svg" class="left-arrow" aria-label="Flèche gauche" />
       <div class="lightbox-img-title">
         <div class="lightbox-photo-content">
         </div>
@@ -72,7 +71,7 @@
       <button class="contact_button modal-btn" onclick="displayModal()">Contactez-moi</button>
     </div>
     <div class="photograph-header"></div>
-    <div class="photograph-media" onclick="launchLightbox()"></div>
+    <div class="photograph-media"></div>
   </main>
 
   <script src="scripts/utils/contactForm.js"></script>
