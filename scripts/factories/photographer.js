@@ -67,7 +67,7 @@ function photographerFactory(data) {
 }
 
 function photographerPageFactory(data) {
-  const { place, tagline, price, name, portrait, id } = data;
+  const { place, tagline, price, name, portrait, id } = data[0];
 
   const picture = `assets/photographers/${portrait}`;
   const index = `${id}`;
@@ -136,12 +136,12 @@ function photographerContactFactory(data) {
   };
 }
 
-function photographerPhotoFactory(media) {
+function mediasLightboxFactory(media) {
   const { image, photographerId } = media;
 
   const picture = `assets/photographers/${photographerId}/${image}`;
 
-  function getphotographerPhotoCardDOM() {
+  function getMediasLightboxCardDOM() {
     const img = document.createElement("img");
     img.setAttribute("src", picture);
 
@@ -152,7 +152,7 @@ function photographerPhotoFactory(media) {
 
   return {
     picture,
-    getphotographerPhotoCardDOM,
+    getMediasLightboxCardDOM,
   };
 }
 

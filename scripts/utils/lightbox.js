@@ -2,152 +2,74 @@
 
 // DOM Elements
 const lightboxContent = document.getElementById("lightbox");
-const medias = document.querySelectorAll(".medias");
 const btnCloseLightbox = document.querySelectorAll(".close-lightbox");
-
-// launch lightbox event
-medias.forEach((btn) => btn.addEventListener("click", launchLightbox));
 
 // close lightbox event
 btnCloseLightbox.forEach((btn) => btn.addEventListener("click", closeLightbox));
 
-// launch lightbox content
-function launchLightbox() {
-  lightboxContent.style.display = "flex";
+// Display ID OnClick
+// Récupère les données médias du fichier Json
+async function getLightBoxMedias() {
+  var medias = [];
 
-  // create a `NodeList` object
-  const lgPhotoContent = document.querySelectorAll(".lightbox-medias");
+  var storeMedias = () => {};
+  await fetch("data/photographers.json")
+    .then((response) => response.json())
+    .then((json) => {
+      medias = json["media"];
+    });
 
-  // convert `NodeList` to an array
-  const lgPhotoContentArr = Array.from(lgPhotoContent);
-
-  // affiche un objet du tableau en fonction de son id
-  const onClick = (event) => {
-    if (event.srcElement.id == 623534343) {
-      lgPhotoContentArr[0].style.display = "block";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 625025343) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "block";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 2525345343) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "block";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 2523434634) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "block";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 398847109) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "block";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 2534342) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "block";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 65235234) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "block";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 23523434) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "block";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 5234343) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "block";
-      lgPhotoContentArr[9].style.display = "none";
-    } else if (event.srcElement.id == 95234343) {
-      lgPhotoContentArr[0].style.display = "none";
-      lgPhotoContentArr[1].style.display = "none";
-      lgPhotoContentArr[2].style.display = "none";
-      lgPhotoContentArr[3].style.display = "none";
-      lgPhotoContentArr[4].style.display = "none";
-      lgPhotoContentArr[5].style.display = "none";
-      lgPhotoContentArr[6].style.display = "none";
-      lgPhotoContentArr[7].style.display = "none";
-      lgPhotoContentArr[8].style.display = "none";
-      lgPhotoContentArr[9].style.display = "block";
+  var photographerMedia = medias.filter(function (obj) {
+    if (obj.photographerId === photographerId) {
+      return obj;
     }
-    console.log(event.srcElement.id);
+  });
+  console.log(photographerMedia);
+
+  return {
+    photographerMedia,
   };
-  window.addEventListener("click", onClick);
 }
+
+// Affiche les médias du photographe
+async function displayMediasLightbox(medias) {
+  const mediasLightbox = document.querySelector(".lightbox-photo-content");
+  medias.forEach((media) => {
+    const mediasLightboxModel = mediasLightboxFactory(media);
+    const mediasLightboxCardDOM =
+      mediasLightboxModel.getMediasLightboxCardDOM();
+    mediasLightbox.appendChild(mediasLightboxCardDOM);
+  });
+}
+
+async function initLightBoxMedias() {
+  // Récupère les datas des medias
+  var medias = await getLightBoxMedias();
+
+  function onClick(event) {
+    console.log(event.srcElement.id);
+
+    var photographerIdMedia = medias["photographerMedia"].filter(function (
+      obj
+    ) {
+      if (obj.id == event.srcElement.id) {
+        // launch lightbox content
+        lightboxContent.style.display = "flex";
+        return obj;
+      }
+
+      return photographerIdMedia;
+    });
+
+    console.log(photographerIdMedia);
+  }
+  window.addEventListener("click", onClick);
+
+  displayMediasLightbox(medias["photographerMedia"]);
+}
+initLightBoxMedias();
 
 // close lightbox
 function closeLightbox() {
   lightboxContent.style.display = "none";
-}
-
-// left arrow function
-function leftArrow() {
-  const lgPhotoContent = document.querySelectorAll(".lightbox-medias");
-  const lgPhotoContentArr = Array.from(lgPhotoContent);
-
-  console.log(lgPhotoContentArr);
 }
