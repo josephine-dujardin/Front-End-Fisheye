@@ -5,15 +5,14 @@ body {
 #block-transparent {
     height: 100vh;
     width: 100%;
-    position: absolute;
+    position: fixed;
     background-color: rgba(127, 127, 127, 0.351);
     display: none;
 }
 
 #contact_modal {
     display: none;
-    margin-top: 50vh;
-    transform: translateY(-50%);
+    justify-content: center;
 }
 
 .photograph-header article {
@@ -105,7 +104,10 @@ body {
 }
 
 .modal {
+    margin-top: 50vh;
+    transform: translateY(-50%);
     border-radius: 5px;
+    position: fixed;
     background-color: #DB8876;
     width: 30%;
     display: flex;
@@ -113,7 +115,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
-    margin: auto;
 }
 
 .modal header {
@@ -178,7 +179,7 @@ form textarea {
     display: none;
     flex-direction: column;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     margin-top: 50vh;
     transform: translateY(-50%);
     background-color: white;
@@ -190,8 +191,13 @@ form textarea {
     align-items: center;
 }
 
+.lightbox-photo-content {
+    justify-content: center;
+    display: flex;
+}
+
 #lightbox img {
-    width: 10%;
+    width: 30%;
     padding: 30px;
     margin-left: auto;
     margin-right: auto;

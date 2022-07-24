@@ -45,7 +45,10 @@ function photographerFactory(data) {
       event.preventDefault();
 
       // Log the clicked element in the console
-      const state = { page_id: 1, user_id: 5 };
+      const state = {
+        page_id: 1,
+        user_id: 5,
+      };
       const url = `photographer.html?${id}`;
       history.pushState(state, "", url);
       location.reload();

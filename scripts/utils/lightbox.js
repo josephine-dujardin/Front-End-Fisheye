@@ -4,9 +4,6 @@
 const lightboxContent = document.getElementById("lightbox");
 const btnCloseLightbox = document.querySelectorAll(".close-lightbox");
 
-// close lightbox event
-btnCloseLightbox.forEach((btn) => btn.addEventListener("click", closeLightbox));
-
 // Display ID OnClick
 // Récupère les données médias du fichier Json
 async function getLightBoxMedias() {
@@ -32,19 +29,18 @@ async function getLightBoxMedias() {
 }
 
 // Affiche les médias du photographe
-async function displayMediasLightbox(medias) {
+async function displayMediasLightbox(media) {
   const mediasLightbox = document.querySelector(".lightbox-photo-content");
-  medias.forEach((media) => {
-    const mediasLightboxModel = mediasLightboxFactory(media);
-    const mediasLightboxCardDOM =
-      mediasLightboxModel.getMediasLightboxCardDOM();
-    mediasLightbox.appendChild(mediasLightboxCardDOM);
-  });
+  // console.log(meda)
+  const mediasLightboxModel = mediasLightboxFactory(media);
+  const mediasLightboxCardDOM = mediasLightboxModel.getMediasLightboxCardDOM();
+  mediasLightbox.appendChild(mediasLightboxCardDOM);
 }
 
 async function initLightBoxMedias() {
   // Récupère les datas des medias
   var medias = await getLightBoxMedias();
+  const blockTransparent = document.getElementById("block-transparent");
 
   function onClick(event) {
     console.log(event.srcElement.id);
@@ -55,21 +51,25 @@ async function initLightBoxMedias() {
       if (obj.id == event.srcElement.id) {
         // launch lightbox content
         lightboxContent.style.display = "flex";
-        return obj;
+        blockTransparent.style.display = "block";
+        displayMediasLightbox(obj);
+        console.log(obj);
       }
 
       return photographerIdMedia;
     });
 
-    console.log(photographerIdMedia);
-  }
-  window.addEventListener("click", onClick);
+    var closeLightbox = medias["photographerMedia"].filter(function (obj) {
+      if (event.srcElement.id === "close-lb") {
+        lightboxContent.style.display = "none";
+        blockTransparent.style.display = "none";
+        document.querySelector(".lightbox-photo-content").innerHTML = "";
+      }
 
-  displayMediasLightbox(medias["photographerMedia"]);
+      return closeLightbox;
+    });
+  }
+
+  window.addEventListener("click", onClick);
 }
 initLightBoxMedias();
-
-// close lightbox
-function closeLightbox() {
-  lightboxContent.style.display = "none";
-}
