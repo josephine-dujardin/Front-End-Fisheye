@@ -17,16 +17,14 @@ btnClose.forEach((btn) => btn.addEventListener("click", closeModal));
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modalbg.style.display = "flex";
   blockTransparent.style.display = "block";
-  document.body.style.overflow = "hidden";
 }
 
 // close modal
 function closeModal() {
   modalbg.style.display = "none";
   blockTransparent.style.display = "none";
-  document.body.style.overflow = "auto";
 }
 // Display values ​​in console
 function checkAll() {
