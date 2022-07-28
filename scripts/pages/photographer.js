@@ -46,6 +46,22 @@ async function init() {
 
 init();
 
+// Affiche le nom du photographe
+async function displayPhotographerName(photographer) {
+  const photographerContactName = document.querySelector(".photographer-name");
+  const photographerContactModel = photographerContactFactory(photographer);
+  const photographerContactCardDOM =
+    photographerContactModel.getphotographerContactCardDOM();
+  photographerContactName.appendChild(photographerContactCardDOM);
+}
+async function initName() {
+  // Récupère les datas des photographes
+  const photographer = await getPhotographerData();
+  displayPhotographerName(photographer);
+}
+
+initName();
+
 // Récupère les données médias du fichier Json
 async function getPhotographerDataMedia() {
   var medias = [];
