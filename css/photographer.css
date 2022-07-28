@@ -48,7 +48,18 @@ body {
     flex-direction: column;
 }
 
+.lightbox-medias {
+    display: flex;
+}
+
 .photograph-media article img {
+    height: 300px;
+    width: 400px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.photograph-media article video {
     height: 300px;
     width: 400px;
     border-radius: 5px;
@@ -178,7 +189,7 @@ form textarea {
 #lightbox {
     display: none;
     flex-direction: column;
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -201,6 +212,21 @@ form textarea {
     padding: 30px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#lightbox video {
+    width: 30%;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-video {
+    width: 400px;
+    height: 300px;
+    z-index: 2;
+    margin-bottom: 72px;
+    position: absolute;
 }
 
 .left-arrow, .right-arrow {

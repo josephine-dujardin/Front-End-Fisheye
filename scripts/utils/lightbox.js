@@ -21,7 +21,6 @@ async function getLightBoxMedias() {
       return obj;
     }
   });
-  console.log(photographerMedia);
 
   return {
     photographerMedia,
@@ -43,8 +42,6 @@ async function initLightBoxMedias() {
   const blockTransparent = document.getElementById("block-transparent");
 
   function onClick(event) {
-    console.log(event.srcElement.id);
-
     var photographerIdMedia = medias["photographerMedia"].filter(function (
       obj
     ) {

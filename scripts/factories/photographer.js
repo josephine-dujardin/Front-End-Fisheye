@@ -122,7 +122,7 @@ function photographerPageFactory(data) {
 }
 
 function photographerContactFactory(data) {
-  const { name } = data;
+  const name = data[0].name;
 
   function getphotographerContactCardDOM() {
     const h2 = document.createElement("h2");
@@ -140,53 +140,107 @@ function photographerContactFactory(data) {
 }
 
 function mediasLightboxFactory(media) {
-  const { image, photographerId } = media;
+  const { image, video, photographerId } = media;
 
-  const picture = `assets/photographers/${photographerId}/${image}`;
+  let mediaType, medias;
+
+  // AVAILABLE MEDIA: IMAGE || VIDEO ?
+  mediaType = image ? "image" : "video";
+  // MEDIA SRC
+  medias =
+    mediaType == "image"
+      ? `assets/photographers/${photographerId}/${image}`
+      : `assets/photographers/${photographerId}/${video}`;
 
   function getMediasLightboxCardDOM() {
+    const article = document.createElement("article");
     const img = document.createElement("img");
-    img.setAttribute("src", picture);
+    const videoMedia = document.createElement("video");
 
-    img.className = "lightbox-medias";
+    // MAKE IMG AND VIDEO
+    if (mediaType == "video") {
+      // Create video
+      videoMedia.controls = true;
+      videoMedia.setAttribute("src", medias);
+      videoMedia.className = "video-mp4";
+      article.appendChild(videoMedia);
+    } else {
+      // Create img
+      img.setAttribute("src", medias);
+      img.className = "medias";
+      article.appendChild(img);
+    }
 
-    return img;
+    article.className = "lightbox-medias";
+
+    return article;
   }
 
   return {
-    picture,
+    medias,
     getMediasLightboxCardDOM,
   };
 }
 
 function photographerPageFactoryMedia(media) {
-  const { title, image, id, photographerId } = media;
+  const { title, image, video, id, photographerId } = media;
 
-  const picture = `assets/photographers/${photographerId}/${image}`;
+  let mediaType, medias;
+
+  // AVAILABLE MEDIA: IMAGE || VIDEO ?
+  mediaType = image ? "image" : "video";
+  // MEDIA SRC
+  medias =
+    mediaType == "image"
+      ? `assets/photographers/${photographerId}/${image}`
+      : `assets/photographers/${photographerId}/${video}`;
+
+  // const picture = `assets/photographers/${photographerId}/${image}`;
   const index = `${id}`;
   const alt = `${title}`;
 
   function getphotographerPageMediaCardDOM() {
     const article = document.createElement("article");
+    const div = document.createElement("div");
     const img = document.createElement("img");
-    img.setAttribute("src", picture);
-    img.setAttribute("id", index);
-    img.setAttribute("alt", alt);
+    const videoMedia = document.createElement("video");
+
+    // MAKE IMG AND VIDEO
+    if (mediaType == "video") {
+      // Create video
+      videoMedia.controls = true;
+      videoMedia.setAttribute("src", medias);
+      videoMedia.setAttribute("id", index);
+      videoMedia.setAttribute("alt", alt);
+      div.setAttribute("id", index);
+      div.setAttribute("alt", alt);
+      article.appendChild(div);
+      article.appendChild(videoMedia);
+      videoMedia.className = "video-mp4";
+    } else {
+      // Create img
+      img.setAttribute("src", medias);
+      img.setAttribute("id", index);
+      img.setAttribute("alt", alt);
+      article.appendChild(img);
+      img.className = "medias";
+    }
+
     const h2 = document.createElement("h2");
     h2.setAttribute("id", index);
     h2.textContent = title;
-    article.appendChild(img);
+
     article.appendChild(h2);
 
     h2.className = "title";
-    img.className = "medias";
+    div.className = "div-video";
 
     return article;
   }
 
   return {
     title,
-    picture,
+    medias,
     index,
     alt,
     getphotographerPageMediaCardDOM,
