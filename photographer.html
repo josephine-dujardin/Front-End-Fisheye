@@ -71,11 +71,47 @@
       <button class="contact_button modal-btn">Contactez-moi</button>
     </div>
     <div class="photograph-header"></div>
+
+    <div class="flex">
+      <div class="menu" aria-label="sélection des photos par catégorie">
+        <strong class="text-tri">Trier par</strong>
+        <div class="menu-select">
+          <form class="menu-by">
+            <fieldset>
+              <ul tabindex="0" id="liste" aria-label="Tri des photos par...">
+                <li tabindex="0" class="selected-inactive" aria-label="popularité">
+                  <input class="input" type="radio" id="popularite" name="menu-option" title="popularite" checked>
+                  <label class="text-label" for="popularite">Popularité</label>
+                  <img src="assets/icons/angle-down.svg" class="angle-down" />
+                  <img src="assets/icons/angle-up.svg" class="angle-up" />
+                </li>
+                <hr>
+                <li tabindex="0" class="inactive" aria-label="date">
+                  <input class="input" type="radio" id="date" name="menu-option" title="date">
+                  <label class="text-label" for="date">Date</label>
+                  <img src="assets/icons/angle-down.svg" class="angle-down" />
+                  <img src="assets/icons/angle-up.svg" class="angle-up" />
+                </li>
+                <hr>
+                <li tabindex="0" class="inactive" aria-label="titre">
+                  <input class="input" type="radio" id="titre" name="menu-option" title="titre">
+                  <label class="text-label" for="titre">Titre</label>
+                  <img src="assets/icons/angle-down.svg" class="angle-down" />
+                  <img src="assets/icons/angle-up.svg" class="angle-up" />
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="photograph-media"></div>
   </main>
 
   <script src="scripts/utils/contactForm.js"></script>
   <script src="scripts/utils/lightbox.js"></script>
+  <script src="scripts/utils/menu.js"></script>
   <script src="scripts/factories/Photographer.js"></script>
   <script src="scripts/pages/photographer.js"></script>
 </body>

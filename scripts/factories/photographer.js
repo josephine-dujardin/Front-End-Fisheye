@@ -183,7 +183,7 @@ function mediasLightboxFactory(media) {
 }
 
 function photographerPageFactoryMedia(media) {
-  const { title, image, video, id, photographerId } = media;
+  const { title, image, video, likes, id, photographerId } = media;
 
   let mediaType, medias;
 
@@ -198,9 +198,13 @@ function photographerPageFactoryMedia(media) {
   // const picture = `assets/photographers/${photographerId}/${image}`;
   const index = `${id}`;
   const alt = `${title}`;
+  const likeImg = document.createElement("span");
+  const span = document.createElement("span");
+  const likeSrc = `assets/icons/red-heart-solid.svg`;
 
   function getphotographerPageMediaCardDOM() {
     const article = document.createElement("article");
+    const divVideo = document.createElement("div");
     const div = document.createElement("div");
     const img = document.createElement("img");
     const videoMedia = document.createElement("video");
@@ -212,11 +216,12 @@ function photographerPageFactoryMedia(media) {
       videoMedia.setAttribute("src", medias);
       videoMedia.setAttribute("id", index);
       videoMedia.setAttribute("alt", alt);
-      div.setAttribute("id", index);
-      div.setAttribute("alt", alt);
-      article.appendChild(div);
+      divVideo.setAttribute("id", index);
+      divVideo.setAttribute("alt", alt);
+      article.appendChild(divVideo);
       article.appendChild(videoMedia);
       videoMedia.className = "video-mp4";
+      divVideo.className = "div-video";
     } else {
       // Create img
       img.setAttribute("src", medias);
@@ -227,19 +232,35 @@ function photographerPageFactoryMedia(media) {
     }
 
     const h2 = document.createElement("h2");
+
     h2.setAttribute("id", index);
+    span.textContent = likes;
+    likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
     h2.textContent = title;
 
-    article.appendChild(h2);
+    span.appendChild(likeImg);
+    div.appendChild(span);
+    div.appendChild(h2);
+    article.appendChild(div);
 
+    div.className = "div";
     h2.className = "title";
-    div.className = "div-video";
+    likeImg.className = "like-img";
+    span.className = "likes";
 
     return article;
   }
 
+  likeImg.onclick = () => {
+    let nbLikes = likes + 1;
+    span.textContent = nbLikes;
+    likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
+    span.appendChild(likeImg);
+  };
+
   return {
     title,
+    likes,
     medias,
     index,
     alt,
