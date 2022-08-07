@@ -62,6 +62,22 @@ async function initName() {
 
 initName();
 
+// Affiche le prix et les likes du photographe
+async function displayPhotographerProfil(photographer) {
+  const photographerProfil = document.getElementById("block-fix");
+  const photographerProfilModel = photographerProfilFactory(photographer);
+  const photographerProfilCardDOM =
+    photographerProfilModel.getphotographerProfilCardDOM();
+  photographerProfil.appendChild(photographerProfilCardDOM);
+}
+async function initProfil() {
+  // Récupère les datas des photographes
+  const photographer = await getPhotographerData();
+  displayPhotographerProfil(photographer);
+}
+
+initProfil();
+
 // Récupère les données médias du fichier Json
 async function getPhotographerDataMedia() {
   var medias = [];

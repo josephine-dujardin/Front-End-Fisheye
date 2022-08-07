@@ -10,6 +10,26 @@ body {
     display: none;
 }
 
+#block-fix {
+    display: flex;
+    height: 50px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    background-color: #DB8876;
+    position: fixed;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-right: 50px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.price {
+    color: #000000 !important;
+    font-size: 20px;
+}
+
 #contact_modal {
     display: none;
     justify-content: center;
@@ -80,10 +100,34 @@ body {
     width: 20px !important;
 }
 
+.div-profil {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.div-likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.span-likes {
+    display: flex;
+}
+
+.h2-likes {
+    margin-right: 5px;
+    font-size: 21px;
+}
+
 .likes {
     display: flex;
     width: 70px;
+    height: 79px;
     justify-content: space-between;
+    align-items: center;
     font-size: 24px;
 }
 
@@ -223,6 +267,7 @@ form textarea {
 
 .text-tri {
     margin-top: 20px;
+    font-size: 20px;
 }
 
 .inactive, hr {
@@ -365,6 +410,10 @@ li {
         margin-bottom: 129px;
     }
 
+    .menu {
+        margin-top: 180px;
+    }
+
     .contact_button {
         margin-top: 622px;
     }
@@ -393,6 +442,10 @@ li {
 @media screen and (max-width: 818px) {
     .photograph-media {
         grid-template-columns: 1fr;
+    }
+
+    .menu {
+        margin-top: 220px;
     }
 
     .photograph-media {
