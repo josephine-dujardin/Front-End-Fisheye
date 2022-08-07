@@ -70,7 +70,7 @@ function photographerFactory(data) {
 }
 
 function photographerPageFactory(data) {
-  const { place, tagline, price, name, portrait, id } = data[0];
+  const { place, tagline, name, portrait, id } = data[0];
 
   const picture = `assets/photographers/${portrait}`;
   const index = `${id}`;
@@ -91,7 +91,6 @@ function photographerPageFactory(data) {
     h2.textContent = name;
     p1.textContent = place;
     p2.textContent = tagline;
-    p3.textContent = price;
     article.appendChild(img);
     article.appendChild(div);
 
@@ -112,7 +111,6 @@ function photographerPageFactory(data) {
   return {
     place,
     tagline,
-    price,
     name,
     picture,
     index,
@@ -136,6 +134,91 @@ function photographerContactFactory(data) {
   return {
     name,
     getphotographerContactCardDOM,
+  };
+}
+
+function photographerProfilFactory(data) {
+  const prices = data[0].price;
+  const likeImage = document.querySelectorAll(".like-img");
+  const likes = document.createElement("h2");
+  const likeImg = document.createElement("span");
+
+  function getphotographerProfilCardDOM() {
+    const h2 = document.createElement("h2");
+    const likeSrc = `assets/icons/heart-solid.svg`;
+    const div = document.createElement("div");
+    const divLikes = document.createElement("div");
+    h2.textContent = prices;
+
+    h2.className = "price";
+
+    var bills = [
+      {
+        likes: 88,
+      },
+      {
+        likes: 85,
+      },
+      {
+        likes: 34,
+      },
+      {
+        likes: 63,
+      },
+      {
+        likes: 55,
+      },
+      {
+        likes: 25,
+      },
+      {
+        likes: 52,
+      },
+      {
+        likes: 77,
+      },
+      {
+        likes: 142,
+      },
+      {
+        likes: 59,
+      },
+    ];
+
+    var res = bills
+      .map((bill) => bill.likes)
+      .reduce((acc, amount) => acc + amount);
+
+    console.log(res);
+
+    likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
+    likes.textContent = res;
+
+    divLikes.appendChild(likes);
+    divLikes.appendChild(likeImg);
+    div.appendChild(divLikes);
+    div.appendChild(h2);
+
+    likes.className = "h2-likes";
+    div.className = "div-profil";
+    divLikes.className = "div-likes";
+    likeImg.className = "span-likes";
+
+    console.log(Number(likes.textContent) + 1);
+
+    return div;
+  }
+
+  likeImg.onclick = () => {
+    let nbLikes = Number(likes.textContent) + 1;
+    likes.textContent = nbLikes;
+    console.log(nbLikes);
+    console.log(likeImage);
+  };
+
+  return {
+    prices,
+    getphotographerProfilCardDOM,
   };
 }
 
@@ -200,6 +283,7 @@ function photographerPageFactoryMedia(media) {
   const alt = `${title}`;
   const likeImg = document.createElement("span");
   const span = document.createElement("span");
+  const p = document.createElement("p");
   const likeSrc = `assets/icons/red-heart-solid.svg`;
 
   function getphotographerPageMediaCardDOM() {
@@ -234,17 +318,19 @@ function photographerPageFactoryMedia(media) {
     const h2 = document.createElement("h2");
 
     h2.setAttribute("id", index);
-    span.textContent = likes;
+    p.textContent = likes;
     likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
     h2.textContent = title;
 
     span.appendChild(likeImg);
+    span.appendChild(p);
     div.appendChild(span);
     div.appendChild(h2);
     article.appendChild(div);
 
     div.className = "div";
     h2.className = "title";
+    p.className = "text-likes";
     likeImg.className = "like-img";
     span.className = "likes";
 
@@ -255,8 +341,11 @@ function photographerPageFactoryMedia(media) {
     let nbLikes = likes + 1;
     span.textContent = nbLikes;
     likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
+    span.style.flexDirection = "row-reverse";
     span.appendChild(likeImg);
   };
+
+  console.log(likeImg);
 
   return {
     title,
