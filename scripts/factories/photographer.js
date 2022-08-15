@@ -1,73 +1,10 @@
-function photographerFactory(data) {
-  const { place, tagline, price, name, portrait, id } = data;
+/**
+ * Display photographers
+ * @param {Object} data Data
+ * @returns Object
+ */
 
-  const picture = `assets/photographers/${portrait}`;
-  const index = `${id}`;
-  const alt = `${name}`;
-
-  function getUserCardDOM() {
-    const article = document.createElement("article");
-    const img = document.createElement("img");
-    img.setAttribute("src", picture);
-    img.setAttribute("id", index);
-    img.setAttribute("alt", alt);
-    const h2 = document.createElement("h2");
-    h2.setAttribute("id", index);
-    const p1 = document.createElement("p");
-    const p2 = document.createElement("p");
-    const p3 = document.createElement("p");
-    h2.textContent = name;
-    p1.textContent = place;
-    p2.textContent = tagline;
-    p3.textContent = price;
-    article.appendChild(img);
-    article.appendChild(h2);
-    article.appendChild(p1);
-    article.appendChild(p2);
-    article.appendChild(p3);
-
-    h2.className = "name";
-    p1.className = "place";
-    p2.className = "tagline";
-    p3.className = "price";
-    img.className = "photographers";
-
-    return article;
-  }
-
-  document.addEventListener(
-    "click",
-    function (event) {
-      // If the clicked element doesn't have the right selector, bail
-      if (!event.target.matches("#" + `${id}`)) return;
-
-      // Don't follow the link
-      event.preventDefault();
-
-      // Log the clicked element in the console
-      const state = {
-        page_id: 1,
-        user_id: 5,
-      };
-      const url = `photographer.html?${id}`;
-      history.pushState(state, "", url);
-      location.reload();
-      false;
-    },
-    false
-  );
-
-  return {
-    place,
-    tagline,
-    price,
-    name,
-    picture,
-    index,
-    alt,
-    getUserCardDOM,
-  };
-}
+const array = [];
 
 function photographerPageFactory(data) {
   const { place, tagline, name, portrait, id } = data[0];
@@ -139,82 +76,20 @@ function photographerContactFactory(data) {
 
 function photographerProfilFactory(data) {
   const prices = data[0].price;
-  const likeImage = document.querySelectorAll(".like-img");
-  const likes = document.createElement("h2");
-  const likeImg = document.createElement("span");
 
   function getphotographerProfilCardDOM() {
     const h2 = document.createElement("h2");
-    const likeSrc = `assets/icons/heart-solid.svg`;
     const div = document.createElement("div");
-    const divLikes = document.createElement("div");
     h2.textContent = prices;
 
     h2.className = "price";
 
-    var bills = [
-      {
-        likes: 88,
-      },
-      {
-        likes: 85,
-      },
-      {
-        likes: 34,
-      },
-      {
-        likes: 63,
-      },
-      {
-        likes: 55,
-      },
-      {
-        likes: 25,
-      },
-      {
-        likes: 52,
-      },
-      {
-        likes: 77,
-      },
-      {
-        likes: 142,
-      },
-      {
-        likes: 59,
-      },
-    ];
-
-    var res = bills
-      .map((bill) => bill.likes)
-      .reduce((acc, amount) => acc + amount);
-
-    console.log(res);
-
-    likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
-    likes.textContent = res;
-
-    divLikes.appendChild(likes);
-    divLikes.appendChild(likeImg);
-    div.appendChild(divLikes);
     div.appendChild(h2);
 
-    likes.className = "h2-likes";
     div.className = "div-profil";
-    divLikes.className = "div-likes";
-    likeImg.className = "span-likes";
-
-    console.log(Number(likes.textContent) + 1);
 
     return div;
   }
-
-  likeImg.onclick = () => {
-    let nbLikes = Number(likes.textContent) + 1;
-    likes.textContent = nbLikes;
-    console.log(nbLikes);
-    console.log(likeImage);
-  };
 
   return {
     prices,
@@ -266,15 +141,22 @@ function mediasLightboxFactory(media) {
 }
 
 function photographerPageFactoryMedia(media) {
-  const { title, image, video, likes, id, photographerId } = media;
+  const dbMediaIndex = window.photographer.medias.findIndex(
+    ({ id }) => id === media.id
+  );
+  const dbMedia = window.photographer.medias[dbMediaIndex];
+
+  const { title, image, video, id, photographerId } = dbMedia;
+  let { likes } = dbMedia;
 
   let mediaType, medias;
+  const clicked = [];
 
   // AVAILABLE MEDIA: IMAGE || VIDEO ?
   mediaType = image ? "image" : "video";
   // MEDIA SRC
   medias =
-    mediaType == "image"
+    mediaType === "image"
       ? `assets/photographers/${photographerId}/${image}`
       : `assets/photographers/${photographerId}/${video}`;
 
@@ -338,14 +220,22 @@ function photographerPageFactoryMedia(media) {
   }
 
   likeImg.onclick = () => {
-    let nbLikes = likes + 1;
-    span.textContent = nbLikes;
+    if (clicked.includes(id)) return;
+    clicked.push(id);
+
+    const newLikes = likes + 1;
+    span.textContent = newLikes;
+
     likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
+
     span.style.flexDirection = "row-reverse";
     span.appendChild(likeImg);
-  };
 
-  console.log(likeImg);
+    dbMedia.likes = newLikes;
+    updateLikesSum();
+
+    // console.log("likesSum", window.photographer.likesSum);
+  };
 
   return {
     title,
@@ -354,5 +244,47 @@ function photographerPageFactoryMedia(media) {
     index,
     alt,
     getphotographerPageMediaCardDOM,
+  };
+}
+
+function photographerPageFactoryLikes(media) {
+  const dbMediaIndex = window.photographer.medias.findIndex(
+    ({ id }) => id === media.id
+  );
+  const dbMedia = window.photographer.medias[dbMediaIndex];
+  const { id } = dbMedia;
+
+  const clicked = [];
+
+  const likeImg = document.createElement("div");
+  const h2 = document.createElement("h2");
+  const likeSrc = `assets/icons/heart-solid.svg`;
+
+  function getphotographerPageLikesCardDOM() {
+    likeImg.innerHTML = "<img class='total-like' src=" + likeSrc + ">";
+    h2.textContent = window.photographer.likesSum;
+
+    window.onclick = () => {
+      clicked.push(id);
+      h2.textContent = window.photographer.likesSum;
+      likeImg.appendChild(h2);
+      // console.log("likesSum", window.photographer.likesSum);
+      updateLikesSum();
+    };
+
+    likeImg.className = "like-img";
+    h2.className = "like-h2";
+
+    likeImg.appendChild(h2);
+
+    array.push(likeImg);
+
+    return array[0];
+  }
+
+  window.addEventListener("click", onclick);
+
+  return {
+    getphotographerPageLikesCardDOM,
   };
 }
