@@ -74,36 +74,16 @@
     </div>
     <div class="photograph-header"></div>
 
-    <div class="flex">
-      <div class="menu" aria-label="sélection des photos par catégorie">
+    <div class="flex justify-content-start">
+      <div class="menu" aria-label="selection des photos par categorie">
         <strong class="text-tri">Trier par</strong>
         <div class="menu-select">
-          <form class="menu-by">
-            <fieldset>
-              <ul tabindex="0" id="liste" aria-label="Tri des photos par...">
-                <li tabindex="0" class="selected-inactive" aria-label="popularité">
-                  <input class="input" type="radio" id="popularite" name="menu-option" title="popularite" checked>
-                  <label class="text-label" for="popularite">Popularité</label>
-                  <img src="assets/icons/angle-down.svg" class="angle-down" />
-                  <img src="assets/icons/angle-up.svg" class="angle-up" />
-                </li>
-                <hr>
-                <li tabindex="0" class="inactive" aria-label="date">
-                  <input class="input" type="radio" id="date" name="menu-option" title="date">
-                  <label class="text-label" for="date">Date</label>
-                  <img src="assets/icons/angle-down.svg" class="angle-down" />
-                  <img src="assets/icons/angle-up.svg" class="angle-up" />
-                </li>
-                <hr>
-                <li tabindex="0" class="inactive" aria-label="titre">
-                  <input class="input" type="radio" id="titre" name="menu-option" title="titre">
-                  <label class="text-label" for="titre">Titre</label>
-                  <img src="assets/icons/angle-down.svg" class="angle-down" />
-                  <img src="assets/icons/angle-up.svg" class="angle-up" />
-                </li>
-              </ul>
-            </fieldset>
-          </form>
+          <select name="menu-option" id="menu-options" aria-label="Tri des photos par...">
+            <option value="" disabled selected>---</option>
+            <option value="popularite" title="popularite" aria-label="popularite">Popularité</option>
+            <option value="date" title="date" aria-label="date">Date</option>
+            <option value="titre" title="titre" aria-label="titre">Titre</option>
+          </select>
         </div>
       </div>
     </div>

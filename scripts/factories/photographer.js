@@ -24,7 +24,6 @@ function photographerPageFactory(data) {
     h2.setAttribute("id", index);
     const p1 = document.createElement("p");
     const p2 = document.createElement("p");
-    const p3 = document.createElement("p");
     h2.textContent = name;
     p1.textContent = place;
     p2.textContent = tagline;
@@ -34,12 +33,10 @@ function photographerPageFactory(data) {
     div.appendChild(h2);
     div.appendChild(p1);
     div.appendChild(p2);
-    div.appendChild(p3);
 
     h2.className = "name";
     p1.className = "place";
-    p2.className = "tagline";
-    p3.className = "price";
+    p2.className = "profil-tagline";
     img.className = "photographers";
 
     return article;
@@ -98,7 +95,7 @@ function photographerProfilFactory(data) {
 }
 
 function mediasLightboxFactory(media) {
-  const { image, video, photographerId } = media;
+  const { image, video, photographerId, id } = media;
 
   let mediaType, medias;
 
@@ -116,15 +113,17 @@ function mediasLightboxFactory(media) {
     const videoMedia = document.createElement("video");
 
     // MAKE IMG AND VIDEO
-    if (mediaType == "video") {
+    if (mediaType === "video") {
       // Create video
       videoMedia.controls = true;
       videoMedia.setAttribute("src", medias);
+      videoMedia.setAttribute("media-id", id);
       videoMedia.className = "video-mp4";
       article.appendChild(videoMedia);
     } else {
       // Create img
       img.setAttribute("src", medias);
+      img.setAttribute("media-id", id);
       img.className = "medias";
       article.appendChild(img);
     }
@@ -228,7 +227,7 @@ function photographerPageFactoryMedia(media) {
 
     likeImg.innerHTML = "<img class='like-image' src=" + likeSrc + ">";
 
-    span.style.flexDirection = "row-reverse";
+    span.style.flexDirection = "row";
     span.appendChild(likeImg);
 
     dbMedia.likes = newLikes;

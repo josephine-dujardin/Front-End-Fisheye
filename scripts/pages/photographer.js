@@ -146,23 +146,20 @@ async function getPhotographerDataMedia() {
 }
 
 // Affiche les médias du photographe
-async function displayPhotographerPageMedia(medias) {
-  let likeArray = [];
-
-  medias.filter(function (obj) {
-    likeArray.push(obj.likes);
-  });
+async function displayPhotographerPageMedia() {
+  const photographerPageMedia = document.querySelector(".photograph-media");
+  photographerPageMedia.innerHTML = "";
 
   updateLikesSum();
 
-  // console.log(likeArray);
-  const photographerPageMedia = document.querySelector(".photograph-media");
-  medias.forEach((media) => {
+  window.photographer.medias.forEach((media) => {
     const photographerPageMediaModel = photographerPageFactoryMedia(media);
     const photographerPageMediaCardDOM =
       photographerPageMediaModel.getphotographerPageMediaCardDOM();
     photographerPageMedia.appendChild(photographerPageMediaCardDOM);
   });
+
+  initLightBoxMedias();
 }
 
 function updateLikesSum() {
@@ -180,7 +177,7 @@ async function initMedia() {
     medias: [...medias.photographerMedia],
   };
 
-  displayPhotographerPageMedia(medias["photographerMedia"]);
+  displayPhotographerPageMedia();
 }
 
 initMedia();
