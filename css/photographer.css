@@ -25,6 +25,7 @@ body {
     margin-right: 50px;
     bottom: 0px;
     right: 0px;
+    z-index: 4;
 }
 
 .like-img {
@@ -43,14 +44,21 @@ body {
     margin-left: 10px;
 }
 
-.price {
-    color: #000000 !important;
-    font-size: 20px;
+.name {
+    color: #D3573C;
+    font-size: 40px;
+    font-weight: normal;
+    margin-block-start: 0px;
 }
 
-#contact_modal {
-    display: none;
-    justify-content: center;
+.profil-tagline {
+    color: #525252;
+    margin-top: 33px;
+}
+
+.price {
+    color: #000000;
+    font-size: 20px;
 }
 
 .photograph-header article {
@@ -143,6 +151,7 @@ body {
 
 .likes {
     display: flex;
+    flex-direction: row-reverse;
     width: 70px;
     height: 79px;
     justify-content: space-between;
@@ -163,8 +172,10 @@ body {
 }
 
 #contact_modal {
+    display: none;
+    justify-content: center;
     position: absolute;
-    z-index: 1;
+    z-index: 4;
     width: 100%;
 }
 
@@ -278,10 +289,19 @@ form textarea {
 .menu {
     display: flex;
     width: 85%;
-    padding: 40px;
+    padding: 40px 0px;
     margin-right: auto;
     margin-left: auto;
     position: absolute;
+}
+
+#menu-options {
+    background-color: #901C1C;
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
 .text-tri {
@@ -333,6 +353,7 @@ fieldset label {
 
 .menu-select {
     margin-left: 20px;
+    z-index: 3;
 }
 
 .input {
@@ -361,7 +382,7 @@ li {
 #lightbox {
     display: none;
     flex-direction: column;
-    z-index: 3;
+    z-index: 4;
     position: fixed;
     margin-top: 50vh;
     transform: translateY(-50%);
@@ -471,8 +492,8 @@ li {
         margin-top: 386px;
     }
 
-    .tagline {
-        line-height: 17px !important;
+    .profil-tagline {
+        line-height: 17px;
         font-size: 15px;
     }
 
@@ -500,4 +521,67 @@ li {
     .left-arrow, .right-arrow {
         height: 30px !important;
     }
+
+    .div-video {
+        width: 100%;
+    }
+
+    #lightbox video {
+        width: 80%;
+    }
+
+    #lightbox {
+        padding: 0px;
+    }
+
+    #lightbox img {
+        width: 50%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+}
+
+/**** Responsive little smartphone ****/
+
+@media screen and (max-width: 465px) {
+    .name {
+        font-size: 25px;
+        margin-top: 33px;
+    }
+
+    .contact_button {
+        margin-top: 567px;
+    }
+
+    .photograph-header article {
+        padding: 0px;
+    }
+
+    .photograph-media {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .photograph-media article img {
+        width: 100%;
+    }
+
+    .photograph-media article {
+        width: 100%;
+    }
+
+    .menu {
+        width: auto;
+    }
+
+    .photograph-media article video {
+        width: 100%;
+    }
+
+    #lightbox img {
+        width: 80%;
+    }
+
 }

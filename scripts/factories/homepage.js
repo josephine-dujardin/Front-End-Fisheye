@@ -37,7 +37,7 @@ function photographerFactory(data) {
     h2.className = "name";
     p1.className = "place";
     p2.className = "tagline";
-    p3.className = "price";
+    p3.className = "profil-price";
     img.className = "photographers";
 
     return article;
