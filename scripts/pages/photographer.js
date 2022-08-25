@@ -3,6 +3,13 @@ document.querySelector(".logo").onclick = function () {
   location.href = "http://localhost:8888/Front-End-Fisheye";
 };
 
+document.querySelector(".logo").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.querySelector(".logo").click();
+  }
+});
+
 // Récupère l'id du photographe dans l'URL
 var a = window.location.href;
 

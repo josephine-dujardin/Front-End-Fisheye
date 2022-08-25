@@ -27,9 +27,27 @@ async function initLightBoxMedias() {
         console.log(obj);
       }
 
+      document.onkeydown = checkKey;
+
+      function checkKey(e) {
+        e = e || window.event;
+
+        if (e.keyCode == "37" && lightboxContent.style.display == "flex") {
+          e.preventDefault();
+          document.getElementById("lft-arrow").click();
+          // left arrow
+        } else if (
+          e.keyCode == "39" &&
+          lightboxContent.style.display == "flex"
+        ) {
+          document.getElementById("rgt-arrow").click();
+          // right arrow
+        }
+      }
       return photographerIdMedia;
     });
   }
+
   document
     .querySelectorAll("article img.medias, article .div-video")
     .forEach((e) => {

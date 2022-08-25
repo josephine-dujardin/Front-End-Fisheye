@@ -16,11 +16,14 @@ function photographerFactory(data) {
   function getUserCardDOM() {
     const article = document.createElement("article");
     const img = document.createElement("img");
+    const h2 = document.createElement("h2");
+    const a = document.createElement("a");
     img.setAttribute("src", picture);
     img.setAttribute("id", index);
     img.setAttribute("alt", alt);
-    const h2 = document.createElement("h2");
+    a.setAttribute("id", index);
     h2.setAttribute("id", index);
+    a.setAttribute("tabindex", 0);
     const p1 = document.createElement("p");
     const p2 = document.createElement("p");
     const p3 = document.createElement("p");
@@ -28,17 +31,26 @@ function photographerFactory(data) {
     p1.textContent = place;
     p2.textContent = tagline;
     p3.textContent = price;
-    article.appendChild(img);
-    article.appendChild(h2);
+    a.appendChild(img);
+    a.appendChild(h2);
+    article.appendChild(a);
     article.appendChild(p1);
     article.appendChild(p2);
     article.appendChild(p3);
 
+    a.className = "photographer-link";
     h2.className = "name";
     p1.className = "place";
     p2.className = "tagline";
     p3.className = "profil-price";
     img.className = "photographers";
+
+    a.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        img.click();
+      }
+    });
 
     return article;
   }

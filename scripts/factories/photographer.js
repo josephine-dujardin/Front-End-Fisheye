@@ -95,7 +95,7 @@ function photographerProfilFactory(data) {
 }
 
 function mediasLightboxFactory(media) {
-  const { image, video, photographerId, id } = media;
+  const { image, video, title, photographerId, id } = media;
 
   let mediaType, medias;
 
@@ -111,6 +111,7 @@ function mediasLightboxFactory(media) {
     const article = document.createElement("article");
     const img = document.createElement("img");
     const videoMedia = document.createElement("video");
+    const mediaName = document.createElement("h2");
 
     // MAKE IMG AND VIDEO
     if (mediaType === "video") {
@@ -118,17 +119,35 @@ function mediasLightboxFactory(media) {
       videoMedia.controls = true;
       videoMedia.setAttribute("src", medias);
       videoMedia.setAttribute("media-id", id);
+      videoMedia.setAttribute("tabindex", 6);
+      videoMedia.setAttribute("alt", `${title}`);
       videoMedia.className = "video-mp4";
+      mediaName.textContent = title;
+      mediaName.className = "title";
+      mediaName.setAttribute("alt", `${title}`);
       article.appendChild(videoMedia);
+      article.appendChild(mediaName);
     } else {
       // Create img
       img.setAttribute("src", medias);
       img.setAttribute("media-id", id);
+      img.setAttribute("tabindex", 6);
+      img.setAttribute("alt", `${title}`);
       img.className = "medias";
+      mediaName.textContent = title;
+      mediaName.className = "title";
+      mediaName.setAttribute("alt", `${title}`);
       article.appendChild(img);
+      article.appendChild(mediaName);
     }
 
     article.className = "lightbox-medias";
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        videoMedia.paused ? videoMedia.play() : videoMedia.pause();
+      }
+    });
 
     return article;
   }
@@ -183,6 +202,7 @@ function photographerPageFactoryMedia(media) {
       videoMedia.setAttribute("alt", alt);
       divVideo.setAttribute("id", index);
       divVideo.setAttribute("alt", alt);
+      divVideo.setAttribute("tabindex", 5);
       article.appendChild(divVideo);
       article.appendChild(videoMedia);
       videoMedia.className = "video-mp4";
@@ -192,6 +212,7 @@ function photographerPageFactoryMedia(media) {
       img.setAttribute("src", medias);
       img.setAttribute("id", index);
       img.setAttribute("alt", alt);
+      img.setAttribute("tabindex", 5);
       article.appendChild(img);
       img.className = "medias";
     }
@@ -214,6 +235,30 @@ function photographerPageFactoryMedia(media) {
     p.className = "text-likes";
     likeImg.className = "like-img";
     span.className = "likes";
+
+    img.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        img.click();
+        img.blur();
+      }
+    });
+
+    videoMedia.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        divVideo.click();
+        divVideo.blur();
+      }
+    });
+
+    divVideo.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        divVideo.click();
+        divVideo.blur();
+      }
+    });
 
     return article;
   }
