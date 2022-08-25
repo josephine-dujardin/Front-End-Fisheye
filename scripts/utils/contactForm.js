@@ -26,6 +26,21 @@ function closeModal() {
   modalbg.style.display = "none";
   blockTransparent.style.display = "none";
 }
+
+document.onkeyup = (e) => {
+  switch (e.key) {
+    case "Escape":
+      // Close contactForm & lightbox
+      document.querySelectorAll(".modal").forEach((modal) => {
+        modalbg.style.display = "none";
+        blockTransparent.style.display = "none";
+        document.getElementById("lightbox").style.display = "none";
+        document.querySelector(".lightbox-photo-content").innerHTML = "";
+      });
+      break;
+  }
+};
+
 // Display values ​​in console
 function checkAll() {
   var lastName = document.getElementById("last").value;

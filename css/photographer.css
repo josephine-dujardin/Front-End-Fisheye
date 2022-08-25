@@ -97,6 +97,9 @@ body {
 
 .lightbox-medias {
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #901C1C;
 }
 
 .photograph-media article img {
@@ -221,6 +224,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
+    top: 0px;
 }
 
 .modal header {
@@ -388,6 +392,7 @@ li {
     transform: translateY(-50%);
     background-color: white;
     padding: 30px;
+    top: 0px;
 }
 
 .lightbox-content {
