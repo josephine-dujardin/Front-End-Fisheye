@@ -309,8 +309,9 @@ form textarea {
 }
 
 .text-tri {
-    margin-top: 20px;
     font-size: 20px;
+    font-weight: bolder;
+    margin-right: 10px;
 }
 
 .inactive, hr {
