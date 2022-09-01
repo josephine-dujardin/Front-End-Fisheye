@@ -4,8 +4,10 @@
  * @returns Object
  */
 
+// array to put the sum of likes
 const array = [];
 
+// displays photographer's profiles
 function photographerPageFactory(data) {
   const { place, tagline, name, portrait, id } = data[0];
 
@@ -13,6 +15,7 @@ function photographerPageFactory(data) {
   const index = `${id}`;
   const alt = `${name}`;
 
+  // Displays the photographer's elements
   function getphotographerPageCardDOM() {
     const article = document.createElement("article");
     const div = document.createElement("div");
@@ -53,6 +56,7 @@ function photographerPageFactory(data) {
   };
 }
 
+// displays photographer's name in contact form
 function photographerContactFactory(data) {
   const name = data[0].name;
 
@@ -71,6 +75,7 @@ function photographerContactFactory(data) {
   };
 }
 
+// displays photographer's price
 function photographerProfilFactory(data) {
   const prices = data[0].price;
 
@@ -94,14 +99,15 @@ function photographerProfilFactory(data) {
   };
 }
 
+// displays photographer's media in lightbox
 function mediasLightboxFactory(media) {
   const { image, video, title, photographerId, id } = media;
 
   let mediaType, medias;
 
-  // AVAILABLE MEDIA: IMAGE || VIDEO ?
+  // displays an image or a video
   mediaType = image ? "image" : "video";
-  // MEDIA SRC
+  // media source
   medias =
     mediaType == "image"
       ? `assets/photographers/${photographerId}/${image}`
@@ -113,7 +119,7 @@ function mediasLightboxFactory(media) {
     const videoMedia = document.createElement("video");
     const mediaName = document.createElement("h2");
 
-    // MAKE IMG AND VIDEO
+    // Display video and img
     if (mediaType === "video") {
       // Create video
       videoMedia.controls = true;
@@ -143,6 +149,7 @@ function mediasLightboxFactory(media) {
 
     article.className = "lightbox-medias";
 
+    // keyboard accessiblity
     document.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         videoMedia.paused ? videoMedia.play() : videoMedia.pause();
@@ -158,6 +165,7 @@ function mediasLightboxFactory(media) {
   };
 }
 
+// displays photographer's media
 function photographerPageFactoryMedia(media) {
   const dbMediaIndex = window.photographer.medias.findIndex(
     ({ id }) => id === media.id
@@ -170,15 +178,14 @@ function photographerPageFactoryMedia(media) {
   let mediaType, medias;
   const clicked = [];
 
-  // AVAILABLE MEDIA: IMAGE || VIDEO ?
+  // displays an image or a video
   mediaType = image ? "image" : "video";
-  // MEDIA SRC
+  // media source
   medias =
     mediaType === "image"
       ? `assets/photographers/${photographerId}/${image}`
       : `assets/photographers/${photographerId}/${video}`;
 
-  // const picture = `assets/photographers/${photographerId}/${image}`;
   const index = `${id}`;
   const alt = `${title}`;
   const likeImg = document.createElement("span");
@@ -193,7 +200,7 @@ function photographerPageFactoryMedia(media) {
     const img = document.createElement("img");
     const videoMedia = document.createElement("video");
 
-    // MAKE IMG AND VIDEO
+    // Display video and img
     if (mediaType == "video") {
       // Create video
       videoMedia.controls = true;
@@ -236,6 +243,7 @@ function photographerPageFactoryMedia(media) {
     likeImg.className = "like-img";
     span.className = "likes";
 
+    // img keyboard accessiblity
     img.addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -244,6 +252,7 @@ function photographerPageFactoryMedia(media) {
       }
     });
 
+    // video keyboard accessiblity
     videoMedia.addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -252,6 +261,7 @@ function photographerPageFactoryMedia(media) {
       }
     });
 
+    // video keyboard accessiblity
     divVideo.addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -263,6 +273,7 @@ function photographerPageFactoryMedia(media) {
     return article;
   }
 
+  // add +1 when click on like
   likeImg.onclick = () => {
     if (clicked.includes(id)) return;
     clicked.push(id);
@@ -277,8 +288,6 @@ function photographerPageFactoryMedia(media) {
 
     dbMedia.likes = newLikes;
     updateLikesSum();
-
-    // console.log("likesSum", window.photographer.likesSum);
   };
 
   return {
@@ -291,6 +300,7 @@ function photographerPageFactoryMedia(media) {
   };
 }
 
+// displays photographer's sum of likes
 function photographerPageFactoryLikes(media) {
   const dbMediaIndex = window.photographer.medias.findIndex(
     ({ id }) => id === media.id
@@ -308,11 +318,11 @@ function photographerPageFactoryLikes(media) {
     likeImg.innerHTML = "<img class='total-like' src=" + likeSrc + ">";
     h2.textContent = window.photographer.likesSum;
 
+    // adds +1 to total likes when one photographer's likes is clicked
     window.onclick = () => {
       clicked.push(id);
       h2.textContent = window.photographer.likesSum;
       likeImg.appendChild(h2);
-      // console.log("likesSum", window.photographer.likesSum);
       updateLikesSum();
     };
 

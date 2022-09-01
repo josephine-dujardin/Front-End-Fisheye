@@ -10,15 +10,17 @@
 </head>
 
 <body>
-
+  <!------------- fond transparant à l'ouverture de la modale & de la lightbox ------------>
   <span id="block-transparent"></span>
 
+  <!------------------------------------ Logo Fisheyes ----------------------------------->
   <header>
     <img src="assets/images/logo.png" id="logo" alt="logo" class="logo" aria-label="Retour à la page d'accueil"
       tabindex="1" />
   </header>
 
   <main id="main">
+    <!------------------------------------ Contact modal ----------------------------------->
     <div class="main_header">
       <button class="contact_button modal-btn" aria-label="Formulaire de contact" tabindex="1">Contactez-moi</button>
     </div>
@@ -57,8 +59,11 @@
         </div>
       </div>
     </section>
+
+    <!------------------------------------ Photographer Profil ----------------------------------->
     <div class="photograph-header"></div>
 
+    <!---------------------------------------- Menu de tri --------------------------------------->
     <div class="flex justify-content-start">
       <div class="menu" aria-label="selection des photos par categorie">
         <div class="menu-select">
@@ -73,6 +78,7 @@
       </div>
     </div>
 
+    <!------------------------------------------ Lightbox ----------------------------------------->
     <section id="lightbox">
       <img src="assets/icons/red-Icon.svg" alt="Fermer" class="close-lightbox" id="close-lb"
         aria-label="Fermer la modal" />
@@ -89,11 +95,14 @@
       </div>
     </section>
 
+    <!----------------------------------- Total likes + price ----------------------------------->
     <span id="block-fix"></span>
 
+    <!------------------------------------------ Medias ----------------------------------------->
     <div class="photograph-media"></div>
   </main>
 
+  <!----------------------------------------- JS Files ------------------------------------------->
   <script src="scripts/utils/contactForm.js"></script>
   <script src="scripts/utils/lightbox.js"></script>
   <script src="scripts/utils/menu.js"></script>

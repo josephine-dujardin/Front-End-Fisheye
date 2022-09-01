@@ -1,5 +1,6 @@
 const menuOptions = document.getElementById("menu-options");
 
+// Function Sort Menu
 menuOptions.onchange = ({ target }) => {
   const { value } = target;
 

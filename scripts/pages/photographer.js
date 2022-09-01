@@ -1,8 +1,11 @@
 //Code JavaScript lié à la page photographer.html
+
+// lien vers la homepage
 document.querySelector(".logo").onclick = function () {
   location.href = "http://localhost:8888/Front-End-Fisheye";
 };
 
+// keyboard accessibility
 document.querySelector(".logo").addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -24,7 +27,6 @@ async function getPhotographerData() {
     .then((response) => response.json())
     .then((json) => {
       photographers = json["photographers"];
-      // console.log(photographers);
     });
 
   // Filtre les données du photographe en fonction de l'ID
@@ -97,6 +99,7 @@ async function displayPhotographerLikes(medias) {
 
   updateLikesSum();
 
+  // Affiche le total des likes à côté du prix
   const photographerLikes = document.getElementById("block-fix");
   medias.forEach((media) => {
     const photographerPageLikes = photographerPageFactoryLikes(media);
@@ -106,6 +109,7 @@ async function displayPhotographerLikes(medias) {
   });
 }
 
+// calcul le total des likes
 function updateLikesSum() {
   window.photographer.likesSum = window.photographer.medias.reduce(
     (previous, { likes }) => previous + likes,
@@ -135,13 +139,9 @@ async function getPhotographerDataMedia() {
     .then((response) => response.json())
     .then((json) => {
       medias = json["media"];
-      // console.log(medias)
     });
 
   var photographerMedia = medias.filter(function (obj) {
-    // console.log('MEDIAAA')
-    // console.log(obj.photographerId)
-    // console.log(photographerId)
     if (obj.photographerId === photographerId) {
       return obj;
     }
@@ -169,6 +169,7 @@ async function displayPhotographerPageMedia() {
   initLightBoxMedias();
 }
 
+// calcul le total des likes
 function updateLikesSum() {
   window.photographer.likesSum = window.photographer.medias.reduce(
     (previous, { likes }) => previous + likes,

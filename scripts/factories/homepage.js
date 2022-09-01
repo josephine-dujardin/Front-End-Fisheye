@@ -4,8 +4,7 @@
  * @returns Object
  */
 
-const array = [];
-
+// displays photographer's profiles
 function photographerFactory(data) {
   const { place, tagline, price, name, portrait, id } = data;
 
@@ -13,6 +12,7 @@ function photographerFactory(data) {
   const index = `${id}`;
   const alt = `${name}`;
 
+  // Displays the photographer's elements
   function getUserCardDOM() {
     const article = document.createElement("article");
     const img = document.createElement("img");
@@ -45,6 +45,7 @@ function photographerFactory(data) {
     p3.className = "profil-price";
     img.className = "photographers";
 
+    // keyboard accessibility
     a.addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
         event.preventDefault();
@@ -55,6 +56,7 @@ function photographerFactory(data) {
     return article;
   }
 
+  // links to the photographers' pages
   document.addEventListener(
     "click",
     function (event) {
