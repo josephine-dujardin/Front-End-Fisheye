@@ -2,6 +2,8 @@ body {
     overflow: auto;
 }
 
+/*************** Blocks ****************/
+
 #block-transparent {
     height: 100vh;
     width: 100%;
@@ -28,6 +30,8 @@ body {
     z-index: 4;
 }
 
+/*************** Likes ****************/
+
 .like-img {
     display: flex;
     align-items: center;
@@ -43,6 +47,38 @@ body {
     height: 20px;
     margin-left: 10px;
 }
+
+.like-image {
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.div-likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.span-likes {
+    display: flex;
+}
+
+.h2-likes {
+    margin-right: 5px;
+    font-size: 21px;
+}
+
+.likes {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 70px;
+    height: 79px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+/*************** Photographer profil ****************/
 
 .name {
     color: #D3573C;
@@ -80,6 +116,27 @@ body {
     object-fit: cover;
 }
 
+.div-profil {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.photograph-header {
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+}
+
+.main_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*************** Medias ****************/
+
 .photograph-media {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -116,6 +173,8 @@ body {
     object-fit: cover;
 }
 
+/*************** Contact form ****************/
+
 .div {
     display: flex;
     align-items: center;
@@ -123,55 +182,6 @@ body {
     width: 100%;
     flex-direction: row-reverse;
     color: #901c1c;
-}
-
-.like-image {
-    height: 20px !important;
-    width: 20px !important;
-}
-
-.div-profil {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.div-likes {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.span-likes {
-    display: flex;
-}
-
-.h2-likes {
-    margin-right: 5px;
-    font-size: 21px;
-}
-
-.likes {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 70px;
-    height: 79px;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 24px;
-}
-
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
-}
-
-.main_header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #contact_modal {
@@ -285,6 +295,8 @@ form textarea {
     margin-top: 10px;
 }
 
+/*************** Menu de tri ****************/
+
 .flex {
     display: flex;
     justify-content: center;
@@ -384,6 +396,8 @@ li {
     color: #DB8876;
 }
 
+/*************** Lightbox ****************/
+
 #lightbox {
     display: none;
     flex-direction: column;
@@ -441,7 +455,7 @@ li {
     margin-right: 0px !important;
 }
 
-/**** Responsive tablet ****/
+/**** Responsive PC portable ****/
 
 @media screen and (max-width: 1222px) {
     .photograph-media {
@@ -449,7 +463,7 @@ li {
     }
 }
 
-/**** Responsive smartphone ****/
+/**** Responsive tablet XL ****/
 
 @media screen and (max-width: 1114px) {
     .photograph-header img {
@@ -483,7 +497,7 @@ li {
 
 }
 
-/**** Responsive smartphone ****/
+/**** Responsive teablet M ****/
 
 @media screen and (max-width: 818px) {
     .photograph-media {
@@ -548,7 +562,7 @@ li {
 
 }
 
-/**** Responsive little smartphone ****/
+/**** Responsive smartphone XL ****/
 
 @media screen and (max-width: 465px) {
     .name {

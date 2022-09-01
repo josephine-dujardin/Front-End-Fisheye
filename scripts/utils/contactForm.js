@@ -4,7 +4,6 @@
 const blockTransparent = document.getElementById("block-transparent");
 const modalbg = document.getElementById("contact_modal");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
 const modalClose = document.querySelectorAll(".close");
 const btnClose = document.querySelectorAll(".btn-close");
 
@@ -31,7 +30,7 @@ document.onkeyup = (e) => {
   switch (e.key) {
     case "Escape":
       // Close contactForm & lightbox
-      document.querySelectorAll(".modal").forEach((modal) => {
+      document.querySelectorAll(".modal").forEach(() => {
         modalbg.style.display = "none";
         blockTransparent.style.display = "none";
         document.getElementById("lightbox").style.display = "none";
@@ -41,12 +40,13 @@ document.onkeyup = (e) => {
   }
 };
 
-// Display values ​​in console
+// Display values with console.log
 function checkAll() {
   var lastName = document.getElementById("last").value;
   var firstName = document.getElementById("first").value;
   var email = document.getElementById("email").value;
   var message = document.getElementById("message").value;
+  var dataArray = [];
 
   if (firstName && lastName && email && message) {
     dataArray = [

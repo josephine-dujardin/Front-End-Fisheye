@@ -5,6 +5,7 @@ body {
     margin: 0;
 }
 
+/*************** Header ****************/
 
 header {
     display: flex;
@@ -23,6 +24,8 @@ h1 {
     height: 50px;
     margin-left: 100px;
 }
+
+/*************** Photographer section ****************/
 
 .photographer_section {
     display: grid;

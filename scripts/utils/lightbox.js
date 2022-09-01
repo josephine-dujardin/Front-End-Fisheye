@@ -17,10 +17,10 @@ async function initLightBoxMedias() {
   const leftArrow = document.getElementById("lft-arrow");
   const rightArrow = document.getElementById("rgt-arrow");
 
+  // launch lightbox content
   function onClickShow(event) {
     var photographerIdMedia = window.photographer.medias.filter(function (obj) {
       if (obj.id == event.srcElement.id) {
-        // launch lightbox content
         lightboxContent.style.display = "flex";
         blockTransparent.style.display = "block";
         displayMediasLightbox(obj);
@@ -29,6 +29,7 @@ async function initLightBoxMedias() {
 
       document.onkeydown = checkKey;
 
+      // lightbox arrow with keyboard
       function checkKey(e) {
         e = e || window.event;
 
@@ -48,14 +49,16 @@ async function initLightBoxMedias() {
     });
   }
 
+  // launch lightbox content event when click on img and video
   document
     .querySelectorAll("article img.medias, article .div-video")
     .forEach((e) => {
       e.addEventListener("click", onClickShow);
     });
 
+  // close lightbox content
   function onClickHide() {
-    var closeLightbox = window.photographer.medias.filter(function (obj) {
+    var closeLightbox = window.photographer.medias.filter(function () {
       lightboxContent.style.display = "none";
       blockTransparent.style.display = "none";
       document.querySelector(".lightbox-photo-content").innerHTML = "";
@@ -65,6 +68,7 @@ async function initLightBoxMedias() {
   }
   document.getElementById("close-lb").addEventListener("click", onClickHide);
 
+  // left arrow event : previous media onclick
   leftArrow.onclick = (event) => {
     const media = event.target.nextElementSibling.querySelector("[media-id]");
     const actualMediaIndex = window.photographer.medias.findIndex(
@@ -78,6 +82,7 @@ async function initLightBoxMedias() {
     displayMediasLightbox(window.photographer.medias[previousMediaIndex]);
   };
 
+  // right arrow event : next media onclick
   rightArrow.onclick = (event) => {
     const media =
       event.target.previousElementSibling.querySelector("[media-id]");
